@@ -42,9 +42,11 @@ export const Agent=({userName}:AgentProps)=>{
             </div>
         )}
         <div className="w-full flex justify-center">
+        {/* @ts-ignore*/}
             {callStatus!='ACTIVE' ?(
                <button className="relative btn-call">
-               <span className={cn("absolute animate-ping rounded-full opacity-75",callStatus!='CONNECTING' & 'hidden')}/>
+                {/* @ts-ignore*/}
+               <span className={cn("absolute animate-ping rounded-full opacity-75",callStatus!='CONNECTING' && 'hidden')}/>
                
                <span>
                {callStatus==='INACTIVE'|| callStatus==='FINISHED' ? 'Call' : '. . .'}
