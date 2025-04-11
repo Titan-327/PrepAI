@@ -11,7 +11,7 @@ const monaSans = Mona_Sans({
 
 
 export const metadata: Metadata = {
-  title: "interview_prep",
+  title: "PrepAI",
   description: "An AI-powered interview preparation tool",
 };
 
