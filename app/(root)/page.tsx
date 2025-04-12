@@ -217,7 +217,7 @@ export default async function Home() {
   return (
     <main className="flex flex-col gap-10 relative">
       {/* Move interactive part to client component */}
-      <ClientContent user={user} />
+      
 
       {/* Hero Section */}
       <section className="card-cta flex flex-col sm:flex-row items-center justify-between gap-6">
