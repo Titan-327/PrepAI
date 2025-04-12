@@ -88,7 +88,7 @@ idToken
         <div className="flex flex-col gap-6 card py-14 px-10 items-center">
             <div className="flex flex-row gap-2 justify-center items-center">
                  <Image src="./logo.svg" alt="logo" height={32} width={38}/>
-                 <h2 className="text-primary-100">Interview_prep</h2>
+                 <h2 className="text-primary-100">PrepAI</h2>
             </div>
             <h3>Practice job interview with AI</h3>
         
