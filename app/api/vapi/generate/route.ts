@@ -2,7 +2,7 @@ import {generateText} from "ai"
 import {google} from "@ai-sdk/google"
 import { getRandomInterviewCover } from "@/lib/utils";
 import { db } from "@/firebase/admin";
-
+import admin from 'firebase-admin';
 
 export async function GET(){
     return Response.json({
@@ -53,7 +53,11 @@ export async function POST(request: Request) {
   
       // Step 3: Store the interview in Firestore under the "interviews" collection
       await db.collection("interviews").add(interview);
-  
+      const userRef = db.collection('users').doc(userid);
+
+  await userRef.update({
+    credits: admin.firestore.FieldValue.increment(-1),
+  });
       // Step 4: Send success response
       return Response.json(
         {

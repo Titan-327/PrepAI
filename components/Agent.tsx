@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation'; // For client-side navigation
 import { vapi } from '@/lib/vapi.sdk'; // VAPI SDK instance for handling the call
 import { interviewer } from '@/constants'; // Interviewer constant (like ID or workflow)
 import { createFeedback } from '@/lib/actions/general.action';
-
+import { db } from '@/firebase/client';
 // ENUM: Define call statuses for better readability and to avoid string typos
 enum CallStatus {
     INACTIVE = 'INACTIVE',
@@ -111,7 +111,7 @@ export const Agent = ({ userName, userId, type, interviewId, questions }: AgentP
     useEffect(function () {
         if (callStatus === CallStatus.FINISHED) {
             if (type === "generate") {
-                // If type is "generate", redirect to home
+                // If type is "generate", redirect to home                    
                 router.push('/');
             } else {
                 // If type is "interview", generate feedback first
