@@ -16,7 +16,8 @@ if(userRecord.exists){
 }
 await db.collection("users").doc(uid).set({
     name:name,
-    email:email
+    email:email,
+    credits:3
 })
 return{
     success:true,
