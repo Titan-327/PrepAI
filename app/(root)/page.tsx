@@ -74,7 +74,7 @@ if(data.isOk){
   toast.success("Payment done successfully")
 }
 else{
- toast.failure("Payment failed")
+ toast.error("Payment failed")
 }
   }
 }
