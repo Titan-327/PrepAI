@@ -228,9 +228,15 @@ export default async function Home() {
           </p>
 
           {user?.credits > 0 ? (
-            <Button asChild className="btn-primary max-sm:w-full">
-              <Link href="/interview">Start an Interview</Link>
-            </Button>
+              <div>
+           <Button asChild className="btn-primary w-full sm:w-auto m-1">
+    <Link href="/interview">Start an Interview</Link>
+  </Button>
+  <Button className="btn-primary w-full sm:w-auto m-1">
+    Credits: {user?.credits}
+  </Button>
+           
+            </div>
           ) : (
             <ClientContent user={user} />
           )}
